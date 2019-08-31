@@ -45,7 +45,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         find_Views();
+        init();
         setupListeners();
+    }
+    public void init(){
+        first = null;
+        second = null;
+        operator = "";
+        temp = "";
+        result.setText("0");
+        isnum = false;
     }
 
     public void find_Views(){
@@ -320,6 +329,8 @@ public class MainActivity extends AppCompatActivity {
         del.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(temp.length() == 0) return;
+
                 temp = temp.substring(0,temp.length()-1);
                 result.setText(temp);
             }
