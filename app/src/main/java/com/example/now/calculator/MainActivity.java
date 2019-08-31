@@ -170,7 +170,7 @@ public class MainActivity extends AppCompatActivity {
         plus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(isnum == true){//그 전에 누른 게 숫자일 때 -> 계산할 게 있으면 계산, 없으면 계산 ㄴㄴ,op만 바꿈
+                if(isnum){//그 전에 누른 게 숫자일 때 -> 계산할 게 있으면 계산, 없으면 계산 ㄴㄴ,op만 바꿈
                     if(first != null){//계산할 게 있는 경우 -> first에 수가 았다.
                         second = Float.parseFloat(temp);
                         calculate();
@@ -178,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
                         temp = "";
                         isnum = false;
                     }else{//계산할 게 없고 그냥 op만 바꾸면 됨
-                        if(temp != ""){
+                        if(!temp.equals("")){
                             first = Float.parseFloat(temp);
                         }
                         operator = "+";
@@ -186,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
                         isnum = false;
                     }
                 }else{//아닐 때 -> 같은 op면 return, 다른 op면 op만 바꾸고 return
-                    if(operator == ("+")){
+                    if(operator.equals("+")){
                         return;
                     }else{
                         operator = "+";
@@ -198,15 +198,15 @@ public class MainActivity extends AppCompatActivity {
         minus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(isnum == true){//그 전에 누른 게 숫자일 때 -> 계산할 게 있으면 계산, 없으면 계산 ㄴㄴ,op만 바꿈
-                    if(first != null && temp != ""){//계산할 게 있는 경우 -> first에 수가 았다.
+                if(isnum){//그 전에 누른 게 숫자일 때 -> 계산할 게 있으면 계산, 없으면 계산 ㄴㄴ,op만 바꿈
+                    if(first != null && !temp.equals("")){//계산할 게 있는 경우 -> first에 수가 았다.
                         second = Float.parseFloat(temp);
                         calculate();
                         operator = "-";
                         temp = "";
                         isnum = false;
                     }else{//계산할 게 없고 그냥 op만 바꾸면 됨
-                        if(temp != ""){
+                        if(!temp.equals("")){
                             first = Float.parseFloat(temp);
                         }
                             operator = "-";
@@ -214,7 +214,7 @@ public class MainActivity extends AppCompatActivity {
                             isnum = false;
                     }
                 }else{//아닐 때 -> 같은 op면 return, 다른 op면 op만 바꾸고 return
-                    if(operator == ("-")){
+                    if(operator.equals("-")){
                         return;
                     }else{
                         operator = "-";
@@ -227,7 +227,7 @@ public class MainActivity extends AppCompatActivity {
         multi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(isnum == true){//그 전에 누른 게 숫자일 때 -> 계산할 게 있으면 계산, 없으면 계산 ㄴㄴ,op만 바꿈
+                if(isnum){//그 전에 누른 게 숫자일 때 -> 계산할 게 있으면 계산, 없으면 계산 ㄴㄴ,op만 바꿈
                     if(first != null){//계산할 게 있는 경우 -> first에 수가 았다.
                         second = Float.parseFloat(temp);
                         calculate();
@@ -235,7 +235,7 @@ public class MainActivity extends AppCompatActivity {
                         temp = "";
                         isnum = false;
                     }else{//계산할 게 없고 그냥 op만 바꾸면 됨
-                        if(temp != ""){
+                        if(!temp.equals("")){
                             first = Float.parseFloat(temp);
                         }
                         operator = "*";
@@ -243,7 +243,7 @@ public class MainActivity extends AppCompatActivity {
                         isnum = false;
                     }
                 }else{//아닐 때 -> 같은 op면 return, 다른 op면 op만 바꾸고 return
-                    if(operator == ("*")){
+                    if(operator.equals("*")){
                         return;
                     }else{
                         operator = "*";
@@ -256,7 +256,7 @@ public class MainActivity extends AppCompatActivity {
         devide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(isnum == true){//그 전에 누른 게 숫자일 때 -> 계산할 게 있으면 계산, 없으면 계산 ㄴㄴ,op만 바꿈
+                if(isnum){//그 전에 누른 게 숫자일 때 -> 계산할 게 있으면 계산, 없으면 계산 ㄴㄴ,op만 바꿈
                     if(first != null){//계산할 게 있는 경우 -> first에 수가 았다.
                         second = Float.parseFloat(temp);
                         calculate();
@@ -264,7 +264,7 @@ public class MainActivity extends AppCompatActivity {
                         temp = "";
                         isnum = false;
                     }else{//계산할 게 없고 그냥 op만 바꾸면 됨
-                        if(temp != ""){
+                        if(!temp.equals("")){
                             first = Float.parseFloat(temp);
                         }
                         operator = "/";
@@ -272,7 +272,7 @@ public class MainActivity extends AppCompatActivity {
                         isnum = false;
                     }
                 }else{//아닐 때 -> 같은 op면 return, 다른 op면 op만 바꾸고 return
-                    if(operator == ("/")){
+                    if(operator.equals("/")){
                         return;
                     }else{
                         operator = "/";
@@ -285,7 +285,7 @@ public class MainActivity extends AppCompatActivity {
         moduler.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(isnum == true){//그 전에 누른 게 숫자일 때 -> 계산할 게 있으면 계산, 없으면 계산 ㄴㄴ,op만 바꿈
+                if(isnum){//그 전에 누른 게 숫자일 때 -> 계산할 게 있으면 계산, 없으면 계산 ㄴㄴ,op만 바꿈
                     if(first != null){//계산할 게 있는 경우 -> first에 수가 았다.
                         second = Float.parseFloat(temp);
                         calculate();
@@ -293,7 +293,7 @@ public class MainActivity extends AppCompatActivity {
                         temp = "";
                         isnum = false;
                     }else{//계산할 게 없고 그냥 op만 바꾸면 됨
-                        if(temp != ""){
+                        if(!temp.equals("")){
                             first = Float.parseFloat(temp);
                         }
                         operator = "%";
@@ -301,7 +301,7 @@ public class MainActivity extends AppCompatActivity {
                         isnum = false;
                     }
                 }else{//아닐 때 -> 같은 op면 return, 다른 op면 op만 바꾸고 return
-                    if(operator == ("%")){
+                    if(operator.equals("%")){
                         return;
                     }else{
                         operator = "%";
@@ -314,18 +314,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 temp = temp + ".";
+                result.setText(temp);
             }
         });
         del.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 temp = temp.substring(0,temp.length()-1);
+                result.setText(temp);
             }
         });
         equal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(isnum==true && first != null){
+                if(isnum && first != null){
                     second = Float.parseFloat(temp);
                     calculate();
                     operator = "";
